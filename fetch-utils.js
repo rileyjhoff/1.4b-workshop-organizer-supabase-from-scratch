@@ -6,8 +6,8 @@ const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 export async function getWorkshops() {
     const response = client
         .from('workshops')
-        .select('*, participants (*)')
-        .order('name', { ascending: true });
+        .select('*');
+        // .order('topic', { ascending: true });
 
     return checkError(response);
 }

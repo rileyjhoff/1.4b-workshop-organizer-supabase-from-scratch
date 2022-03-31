@@ -21,7 +21,7 @@ async function displayAllWorkshops() {
         nameEl.classList.add('workshop-name');
         participantsEl.classList.add('participants');
 
-        // nameEl.textContent = workshop;
+        nameEl.textContent = workshop.topic;
         
         for (let participant of workshop.participants) {
             const anchor = document.createElement('a');
@@ -37,7 +37,10 @@ async function displayAllWorkshops() {
     }
 }
 
-window.addEventListener('load', displayAllWorkshops());
+window.addEventListener('load', async () => {
+    const workshops = await getWorkshops();
+    console.log(workshops);
+});
 
 logoutButton.addEventListener('click', () => {
     logout();
