@@ -38,8 +38,9 @@ async function displayAllWorkshops() {
 }
 
 window.addEventListener('load', async () => {
-    const workshops = await getWorkshops();
-    console.log(workshops);
+    // const workshops = await getWorkshops();
+    // console.log(workshops);
+    displayAllWorkshops();
 });
 
 logoutButton.addEventListener('click', () => {

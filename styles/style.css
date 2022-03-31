@@ -147,3 +147,23 @@ main * {
     flex-flow: wrap;
     justify-content: center;
 }
+
+.workshop {
+    margin: 10px;
+    padding: 10px;
+    width: 150px;
+}
+
+.workshop h3 {
+    margin: 0px;
+    text-align: center;
+}
+
+.participants {
+    display:flex;
+    flex-flow: wrap;
+}
+
+.participant {
+    padding: 5px;
+}
