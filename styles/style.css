@@ -129,3 +129,15 @@ footer {
 .auth-container button {
     margin: 10px;
 }
+
+main * {
+    border: 1px solid black;
+}
+
+#workshops-container {
+    width: 80%;
+    padding: 20px;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+}
