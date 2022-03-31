@@ -79,3 +79,58 @@ We will be creating a Workshop Organizer. This app allows you to add participant
 3. Automatically generate the participant form using a participant fetched from the database. That way if new properties end up added to the participant table, the front end dev doesn't need to update the front end later.
 4. Add filter/sort functionality to the workshops page? Only show participants who are older than 21, for example? Only show workshops with more than 2 participants?
 5. _Mega ambitious_: I want to able to drag and drop participants to different workshops.
+
+# Plan
+
+## HTML elements
+
+- workshop page
+  - dynamically rendered divs for each workshop
+    - header for workshop name
+    - div to append participants
+      - participant div
+- add participant page
+  - form to add participant name and their workshop
+    - input for participant name
+    - dropdown for workshop to attend
+    - submit button
+- edit participant page
+  - form to edit participant name and workshop
+    - input prefilled with participant name
+    - dropdown preselected with their current workshop
+    - submit button
+  - delete participant button
+- add workshop page
+  - form
+    - input for workshop name
+    - submit button
+
+## Events
+
+- workshop page
+  - on load, display workshops divs (with participants)
+  - on clicking particpant, redirect to edit participant page
+- add participant page
+  - on form submission, add new participant to supabase and redirect user back to workshop page
+- edit participant page
+  - on form submission, update participant info and redirect user back to workshop page
+  - on clicking delete participant, delete participant from supabase and redirect user back to workshop page
+- add workshop page
+  - on form submission, add workshop to supabase and redirect user back to workshop page
+
+## Order
+
+1. supabase CRUD functions
+2. HTML skeleton for workshop page
+3. write displayAllWorkshops function
+4. write workshop page on load event listener
+5. HTML skeleton for add participant page
+6. write add participant form event listener
+7. HTML skeleton for edit participant page
+8. add event listener to displayAllWorkshops that redirects user to edit participant page when they click on a participant
+9. write edit participant form event listener
+10. write delete participant button event listener
+11. HTML skeleton for add workshop page
+12. write add workshop form event listener
+13. work on drag and drop event listener
+14. other stretch goals
