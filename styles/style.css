@@ -47,19 +47,25 @@ section {
 
 header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
     background-color: var(--color3);
     height: var(--header-height);
     box-shadow: var(--shadow);
 }
 
+header div {
+    margin: 5px;
+    padding: 10px;
+}
+
+header div:hover {
+    border: 1px dotted cyan;
+}
+
 h2 {
     font-size: 1.8rem;
     font-weight: bold;
-}
-
-.gutter-right {
-    margin-right: 20px;
 }
 
 .main-logo {
@@ -73,7 +79,7 @@ header img {
 p {
     margin: var(--gutter);
 }
-  
+
 footer {
     position: fixed;
     width: 100%;
@@ -85,10 +91,10 @@ footer {
     box-shadow: var(--shadow);
 }
 
-  
-  @keyframes pulse {
+
+@keyframes pulse {
     20% {
-      transform: rotate3d(-10, -10, -10, 50deg) scale(1.2);
+    transform: rotate3d(-10, -10, -10, 50deg) scale(1.2);
     }
 
     40% {
@@ -97,13 +103,13 @@ footer {
 
     60% {
         transform: rotate3d(-10, 10, 10, 50deg) scale(1.2);
-      }
+    }
 
     80% {
         transform: rotate3d(10, 10, 10, 50deg) scale(1);
     }
 
-  }
+}
 
 #logout {
     position: fixed;
