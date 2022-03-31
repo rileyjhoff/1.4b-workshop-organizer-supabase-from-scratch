@@ -11,6 +11,33 @@ export async function getWorkshops() {
     return checkError(response);
 }
 
+export async function createParticipant(participant) {
+    const response = await client
+        .from('participants')
+        .insert(participant);
+
+    return checkError(response);
+}
+
+export async function getParticipant(id) {
+    const response = await client
+        .from('participants')
+        .select()
+        .match({ id })
+        .single();
+
+    return checkError(response);
+}
+
+export async function deleteParticipant(id) {
+    const response = await client
+        .from('participants')
+        .delete()
+        .match({ id });
+
+    return checkError(response);
+}
+
 export function getUser() {
     return client.auth.session() && client.auth.session().user;
 }

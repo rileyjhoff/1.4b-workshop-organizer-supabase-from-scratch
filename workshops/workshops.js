@@ -18,6 +18,7 @@ async function displayAllWorkshops() {
         const participantsEl = document.createElement('div');
 
         workshopDiv.classList.add('workshop');
+        workshopDiv.id = workshop.id;
         nameEl.classList.add('workshop-name');
         participantsEl.classList.add('participants');
 
