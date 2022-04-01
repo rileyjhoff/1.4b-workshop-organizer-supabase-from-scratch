@@ -2,7 +2,8 @@ import {
     checkAuth, 
     logout,
     createWorkshop,
-    getCreatedWorkshops
+    getCreatedWorkshops,
+    deleteWorkshop
 } from '../fetch-utils.js';
 
 checkAuth();
@@ -20,10 +21,21 @@ form.addEventListener('submit', async (e) => {
     location.replace('../workshops');
 });
 
+document.addEventListener('click', async (e) => {
+    if (e.target.id === 'delete') {
+        if (confirm(`Are you sure you want to delete ${e.path[1].firstChild.textContent}?`)) {
+            const workshopId = e.path[1].id;
+            await deleteWorkshop(workshopId);
+            location.reload();
+        }
+    }
+});
+
 window.addEventListener('load', async () => {
     const createdWorkshops = await getCreatedWorkshops();
     console.log(createdWorkshops);
     if (createdWorkshops.length > 0) {
+        workshopsContainer.classList.remove('hide');
         const deleteWorkshopsHeader = document.createElement('h1');
         deleteWorkshopsHeader.textContent = 'Delete Created Workshops:';
         workshopsContainer.prepend(deleteWorkshopsHeader);
@@ -36,6 +48,7 @@ window.addEventListener('load', async () => {
             workshopDiv.id = workshop.id;
             nameEl.classList.add('workshop-name');
             deleteButton.textContent = 'Delete';
+            deleteButton.id = 'delete';
     
             nameEl.textContent = workshop.topic;
             workshopDiv.append(nameEl, deleteButton);

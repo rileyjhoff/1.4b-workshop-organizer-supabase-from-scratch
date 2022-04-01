@@ -247,3 +247,7 @@ button {
 .delete-workshop button {
     margin-top: 10px;
 }
+
+.hide {
+    visibility: hidden;
+}
