@@ -195,3 +195,14 @@ button {
 #edit-participant-form * {
     margin: 5px;
 }
+
+#add-workshop-form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 250px;
+}
+
+#add-workshop-form * {
+    margin: 10px;
+}

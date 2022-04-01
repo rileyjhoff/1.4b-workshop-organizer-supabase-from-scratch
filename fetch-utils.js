@@ -11,6 +11,14 @@ export async function getWorkshops() {
     return checkError(response);
 }
 
+export async function createWorkshop(topic) {
+    const response = await client
+        .from('workshops')
+        .insert({ topic });
+
+    return checkError(response);
+}
+
 export async function createParticipant(participant) {
     const response = await client
         .from('participants')
