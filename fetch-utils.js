@@ -64,6 +64,15 @@ export async function updateParticipant(participant) {
     return checkError(response);
 }
 
+export async function updateParticipantWorkshop(participantId, workshopId) {
+    const response = await client
+        .from('participants')
+        .update({ workshop_id:workshopId })
+        .match({ id: participantId });
+
+    return checkError(response);
+}
+
 export async function getParticipant(id) {
     const response = await client
         .from('participants')
