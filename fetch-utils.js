@@ -19,6 +19,15 @@ export async function createParticipant(participant) {
     return checkError(response);
 }
 
+export async function updateParticipant(participant) {
+    const response = await client
+        .from('participants')
+        .update(participant)
+        .match({ id: participant.id });
+
+    return checkError(response);
+}
+
 export async function getParticipant(id) {
     const response = await client
         .from('participants')

@@ -18,7 +18,6 @@ form.addEventListener('submit', async (e) => {
         name: data.get('name'),
         workshop_id: data.get('workshop')
     };
-    console.log(participant);
     await createParticipant(participant);
     form.reset();
     location.replace('../workshops');
