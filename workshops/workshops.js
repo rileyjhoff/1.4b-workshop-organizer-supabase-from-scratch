@@ -58,6 +58,7 @@ async function displayAllWorkshops() {
             participantDiv.textContent = participant.name;
             anchor.href = `../edit-participant/?id=${participant.id}`;
             anchor.dataset.id = participant.id;
+            anchor.append(participantDiv);
             participantsEl.append(anchor);
         }
         workshopDiv.append(nameEl, participantsEl);
@@ -100,6 +101,7 @@ document.addEventListener('dragend', () => {
     // reset the transparency
     dragged.style.opacity = '';
     dropzone.style.background = '';
+    dropzone.style.opacity = '';
 }, false);
 
 /* events fired on the drop targets */
@@ -115,9 +117,11 @@ document.addEventListener('dragenter', (e) => {
         const dropzones = document.querySelectorAll('.workshop');
         for (let clearDropzone of dropzones) {
             clearDropzone.style.background = '';
+            clearDropzone.style.opacity = '';
         }
         dropzone = document.getElementById(dragWorkshopId);
         dropzone.style.background = 'green';
+        dropzone.style.opacity = 0.8;
         console.log(dragWorkshopId);
     }
     if (e.path[1].className === 'workshop' && e.path[1].id !== dragWorkshopId) {
@@ -125,9 +129,11 @@ document.addEventListener('dragenter', (e) => {
         const dropzones = document.querySelectorAll('.workshop');
         for (let clearDropzone of dropzones) {
             clearDropzone.style.background = '';
+            clearDropzone.style.opacity = '';
         }
         dropzone = document.getElementById(dragWorkshopId);
         dropzone.style.background = 'green';
+        dropzone.style.opacity = 0.8;
         console.log(dragWorkshopId);
     }
 }, false);
@@ -138,5 +144,4 @@ document.addEventListener('drop', async (e) => {
     // move dragged elem to the selected drop target
     dropzone.lastChild.append(dragged);
     await updateParticipantWorkshop(dragParticipantId, dragWorkshopId);
-
 }, false);

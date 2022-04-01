@@ -25,9 +25,11 @@ body {
 main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin-bottom: calc(var(--footer-height));
+    background-color: blanchedalmond;
+    height: 100%;
 }
 
 section {
@@ -60,7 +62,11 @@ header div {
 }
 
 header div:hover {
-    border: 1px dotted cyan;
+    border: 2px dotted cyan;
+}
+
+a div:hover {
+    border: 2px dotted cyan;
 }
 
 h2 {
@@ -121,6 +127,7 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: flex-start;
 }
 
 .auth-container {
@@ -136,10 +143,6 @@ footer {
     margin: 10px;
 }
 
-main * {
-    border: 1px solid black;
-}
-
 #workshops-container {
     width: 80%;
     padding: 20px;
@@ -149,10 +152,12 @@ main * {
 }
 
 .workshop {
+    background-color: white;
     margin: 10px;
     padding: 15px;
     width: 200px;
     min-height: 100px;
+    border: 1px solid black;
 }
 
 .workshop h3 {
@@ -177,6 +182,7 @@ main * {
     flex-direction: column;
     padding: 20px;
     width: 250px;
+    background-color: white;
 }
 
 #add-participant-form * {
@@ -194,6 +200,15 @@ button {
     flex-direction: column;
     padding: 20px;
     width: 250px;
+    background-color: white;
+}
+
+#delete-button-div {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    width: 250px;
+    padding-bottom: 20px;
 }
 
 #edit-participant-form * {
@@ -205,6 +220,7 @@ button {
     flex-direction: column;
     padding: 20px;
     width: 250px;
+    background-color: white;
 }
 
 #add-workshop-form * {
@@ -229,6 +245,8 @@ button {
     display: flex;
     flex-flow: wrap;
     justify-content: center;
+    background-color: white;
+    border: 1px solid black;
 }
 
 .delete-workshop {
@@ -237,6 +255,7 @@ button {
     width: 200px;
     display:flex;
     flex-direction: column;
+    border: 1px solid black;
 }
 
 .delete-workshop h3 {
@@ -250,4 +269,17 @@ button {
 
 .hide {
     visibility: hidden;
+}
+
+.auth-container {
+    background-color: white;
+    padding: 0 10px 10px;
+}
+
+.auth-container h3 {
+    text-align: center;
+}
+
+.left, .right {
+    margin-top: 80px;
 }
