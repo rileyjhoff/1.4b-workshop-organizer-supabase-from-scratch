@@ -11,6 +11,17 @@ export async function getWorkshops() {
     return checkError(response);
 }
 
+export async function getCreatedWorkshops() {
+    const user = await getUser();
+    const response = await client
+        .from('workshops')
+        .select('*')
+        .order('topic', { ascending: true })
+        .match({ user_id:user.id });
+
+    return checkError(response);
+}
+
 export async function createWorkshop(topic) {
     const response = await client
         .from('workshops')

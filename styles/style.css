@@ -151,7 +151,8 @@ main * {
 .workshop {
     margin: 10px;
     padding: 10px;
-    width: 150px;
+    width: 200px;
+    min-height: 100px;
 }
 
 .workshop h3 {
@@ -162,10 +163,13 @@ main * {
 .participants {
     display:flex;
     flex-flow: wrap;
+    justify-content: center;
+    padding: 5px;
 }
 
 .participant {
     padding: 5px;
+    margin: 3px;
 }
 
 #add-participant-form {
@@ -205,4 +209,41 @@ button {
 
 #add-workshop-form * {
     margin: 10px;
+}
+
+#created-workshops-container {
+    width: 60%;
+    padding: 20px;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
+#created-workshops-container h1{
+    margin: 0 0 20px;
+}
+
+#created-workshops {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
+.delete-workshop {
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    display:flex;
+    flex-direction: column;
+}
+
+.delete-workshop h3 {
+    margin: 0px;
+    text-align: center;
+}
+
+.delete-workshop button {
+    margin-top: 10px;
 }
