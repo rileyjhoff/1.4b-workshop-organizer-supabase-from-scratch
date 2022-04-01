@@ -182,6 +182,7 @@ main * {
 button {
     width: fit-content;
     align-self: center;
+    cursor: pointer;
 }
 
 #edit-participant-form {
