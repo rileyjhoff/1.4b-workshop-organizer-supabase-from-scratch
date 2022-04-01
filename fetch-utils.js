@@ -38,10 +38,27 @@ export async function createParticipant(participant) {
     return checkError(response);
 }
 
+export async function createNullParticipant(name) {
+    const response = await client
+        .from('participants')
+        .insert({ name });
+
+    return checkError(response);
+}
+
 export async function updateParticipant(participant) {
     const response = await client
         .from('participants')
         .update(participant)
+        .match({ id: participant.id });
+
+    return checkError(response);
+}
+
+export async function updateParticipantWorkshop(participant) {
+    const response = await client
+        .from('participants')
+        .update({ workshop_id: 'NULL' })
         .match({ id: participant.id });
 
     return checkError(response);
@@ -53,6 +70,15 @@ export async function getParticipant(id) {
         .select()
         .match({ id })
         .single();
+
+    return checkError(response);
+}
+
+export async function getParticipantsByWorkshop(workshopId) {
+    const response = await client
+        .from('participants')
+        .select()
+        .match({ workshop_id:workshopId });
 
     return checkError(response);
 }

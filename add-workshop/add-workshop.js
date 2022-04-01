@@ -3,7 +3,11 @@ import {
     logout,
     createWorkshop,
     getCreatedWorkshops,
-    deleteWorkshop
+    deleteWorkshop,
+    getParticipantsByWorkshop,
+    updateParticipantWorkshop,
+    deleteParticipant,
+    createNullParticipant
 } from '../fetch-utils.js';
 
 checkAuth();
@@ -25,6 +29,11 @@ document.addEventListener('click', async (e) => {
     if (e.target.id === 'delete') {
         if (confirm(`Are you sure you want to delete ${e.path[1].firstChild.textContent}?`)) {
             const workshopId = e.path[1].id;
+            const participantsNeedingAHome = await getParticipantsByWorkshop(workshopId);
+            for (let participant of participantsNeedingAHome) {
+                await createNullParticipant(participant.name);
+                await deleteParticipant(participant.id);
+            }
             await deleteWorkshop(workshopId);
             location.reload();
         }
