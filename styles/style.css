@@ -167,3 +167,30 @@ main * {
 .participant {
     padding: 5px;
 }
+
+#add-participant-form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 250px;
+}
+
+#add-participant-form * {
+    margin: 5px;
+}
+
+button {
+    width: fit-content;
+    align-self: center;
+}
+
+#edit-participant-form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 250px;
+}
+
+#edit-participant-form * {
+    margin: 5px;
+}
