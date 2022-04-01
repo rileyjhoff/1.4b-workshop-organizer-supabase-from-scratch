@@ -25,9 +25,11 @@ body {
 main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin-bottom: calc(var(--footer-height));
+    background-color: blanchedalmond;
+    height: 100%;
 }
 
 section {
@@ -47,19 +49,29 @@ section {
 
 header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
     background-color: var(--color3);
     height: var(--header-height);
     box-shadow: var(--shadow);
 }
 
+header div {
+    margin: 5px;
+    padding: 10px;
+}
+
+header div:hover {
+    border: 2px dotted cyan;
+}
+
+a div:hover {
+    border: 2px dotted cyan;
+}
+
 h2 {
     font-size: 1.8rem;
     font-weight: bold;
-}
-
-.gutter-right {
-    margin-right: 20px;
 }
 
 .main-logo {
@@ -73,7 +85,7 @@ header img {
 p {
     margin: var(--gutter);
 }
-  
+
 footer {
     position: fixed;
     width: 100%;
@@ -85,10 +97,10 @@ footer {
     box-shadow: var(--shadow);
 }
 
-  
-  @keyframes pulse {
+
+@keyframes pulse {
     20% {
-      transform: rotate3d(-10, -10, -10, 50deg) scale(1.2);
+    transform: rotate3d(-10, -10, -10, 50deg) scale(1.2);
     }
 
     40% {
@@ -97,13 +109,13 @@ footer {
 
     60% {
         transform: rotate3d(-10, 10, 10, 50deg) scale(1.2);
-      }
+    }
 
     80% {
         transform: rotate3d(10, 10, 10, 50deg) scale(1);
     }
 
-  }
+}
 
 #logout {
     position: fixed;
@@ -115,6 +127,7 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: flex-start;
 }
 
 .auth-container {
@@ -128,4 +141,145 @@ footer {
 
 .auth-container button {
     margin: 10px;
+}
+
+#workshops-container {
+    width: 80%;
+    padding: 20px;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
+.workshop {
+    background-color: white;
+    margin: 10px;
+    padding: 15px;
+    width: 200px;
+    min-height: 100px;
+    border: 1px solid black;
+}
+
+.workshop h3 {
+    margin: 0px;
+    text-align: center;
+}
+
+.participants {
+    display:flex;
+    flex-flow: wrap;
+    justify-content: center;
+    padding: 5px;
+}
+
+.participant {
+    padding: 5px;
+    margin: 3px;
+}
+
+#add-participant-form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 250px;
+    background-color: white;
+}
+
+#add-participant-form * {
+    margin: 5px;
+}
+
+button {
+    width: fit-content;
+    align-self: center;
+    cursor: pointer;
+}
+
+#edit-participant-form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 250px;
+    background-color: white;
+}
+
+#delete-button-div {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    width: 250px;
+    padding-bottom: 20px;
+}
+
+#edit-participant-form * {
+    margin: 5px;
+}
+
+#add-workshop-form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 250px;
+    background-color: white;
+}
+
+#add-workshop-form * {
+    margin: 10px;
+}
+
+#created-workshops-container {
+    width: 60%;
+    padding: 20px;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
+#created-workshops-container h1{
+    margin: 0 0 20px;
+}
+
+#created-workshops {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.delete-workshop {
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    display:flex;
+    flex-direction: column;
+    border: 1px solid black;
+}
+
+.delete-workshop h3 {
+    margin: 0px;
+    text-align: center;
+}
+
+.delete-workshop button {
+    margin-top: 10px;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.auth-container {
+    background-color: white;
+    padding: 0 10px 10px;
+}
+
+.auth-container h3 {
+    text-align: center;
+}
+
+.left, .right {
+    margin-top: 80px;
 }
