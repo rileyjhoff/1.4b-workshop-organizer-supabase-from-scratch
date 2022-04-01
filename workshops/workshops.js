@@ -1,7 +1,8 @@
 import { 
     checkAuth, 
     logout,
-    getWorkshops
+    getWorkshops,
+    getNullParticipants
 } from '../fetch-utils.js';
 
 checkAuth();
@@ -39,8 +40,8 @@ async function displayAllWorkshops() {
 }
 
 window.addEventListener('load', async () => {
-    // const workshops = await getWorkshops();
-    // console.log(workshops);
+    const participants = await getNullParticipants();
+    console.log(participants);
     displayAllWorkshops();
 });
 

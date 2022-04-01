@@ -5,7 +5,6 @@ import {
     getCreatedWorkshops,
     deleteWorkshop,
     getParticipantsByWorkshop,
-    updateParticipantWorkshop,
     deleteParticipant,
     createNullParticipant
 } from '../fetch-utils.js';

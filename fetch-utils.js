@@ -22,6 +22,15 @@ export async function getCreatedWorkshops() {
     return checkError(response);
 }
 
+export async function getNullParticipants() {
+    const response = await client
+        .from('participants')
+        .select('*')
+        .is('workshop_id', null);
+
+    return checkError(response);
+}
+
 export async function createWorkshop(topic) {
     const response = await client
         .from('workshops')
@@ -50,15 +59,6 @@ export async function updateParticipant(participant) {
     const response = await client
         .from('participants')
         .update(participant)
-        .match({ id: participant.id });
-
-    return checkError(response);
-}
-
-export async function updateParticipantWorkshop(participant) {
-    const response = await client
-        .from('participants')
-        .update({ workshop_id: 'NULL' })
         .match({ id: participant.id });
 
     return checkError(response);
